@@ -20,13 +20,20 @@ $(function(){
  		var result = leapyear(year);
  	 
  	}else {
- 		alert("wrong!");
+ 		$("#yeargroup").addClass("has-error")
  	}
- 	$("#result").text(result);
-
- 	
+ 	$("#result").show();
+ 	$(".year").text(year);
+ 	if (!result) {
+ 		$(".not").text("not");
+ 	}else{
+ 		$(".not").text("");
+ 	}
  	
  });
+ $("#yeargroup").click(function(){
+ 	 $(this).removeClass("has-error")
+ })
 
 
 
